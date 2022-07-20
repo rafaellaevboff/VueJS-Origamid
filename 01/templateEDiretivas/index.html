@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title>Vue.js</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <div v-show="comprou" :style="{background: cor}">
+            <p>{{conteudo}}</p>
+            <p>{{lado * lado}}</p>
+            <p>{{comprou ? 'Sim, comprou':'Não comprou'}}</p>
+            <a v-bind:href="comprou ? href : ''">{{href}}</a>
+        </div>
+        <input v-model="cor" type="color">
+        {{cor}}
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                titulo: "Curso de VueJS",
+                conteudo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc eget lorem dolor sed.",
+                lado: 5,
+                comprou: true,
+                href: "https://www.google.com/",
+                cor: "#333"
+            }
+        })
+    </script>
+</body>
+</html>
